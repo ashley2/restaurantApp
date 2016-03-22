@@ -3,19 +3,26 @@ var app = angular.module('resApp');
 app.controller('resCtrl', function($scope, ResService){
 
 
-  ResService.getAll()
-  .then(function(res){
-
-    var reservations = res.data;
-    $scope.reservations = reservations;
-    
-
-  }, function(err){
-    console.error(err);
+  $(document).ready(function(){
+    $('.modal-trigger').leanModal();
   });
 
 
-  $scope.addReservation = function(){
+  
+  // ResService.getAll()
+  // .then(function(res){
+
+  //   var reservations = res.data;
+  //   $scope.reservations = reservations;
+
+
+  // }, function(err){
+  //   console.error(err);
+  // });
+
+
+  $scope.addReserv = function(){
+    console.log('click')
     ResService.create($scope.newReservation)
     .then(function(res){
       $scope.reservations.push(res.data)
@@ -67,6 +74,6 @@ app.controller('resCtrl', function($scope, ResService){
 //         console.log('err ' , err);
 //       })
 //   }
-  
+
 })
 

@@ -6,23 +6,23 @@ var router = express.Router();
 var Reservation = require('../models/reservation');
 
 
-// router.get('/', (req, res) => {
-//   Dest.find({}, (err, data) => {
-//     if(err) {
-//       return res.status(499).send(err)
-//     }
-//     res.send(data);
-//   })
-// })
+router.get('/', (req, res) => {
+  Reservation.find({}, (err, data) => {
+    if(err) {
+      return res.status(499).send(err)
+    }
+    res.send(data);
+  })
+})
 
-// router.post('/', (req, res) => {
-//   Dest.create(req.body, (err, destination) =>{
-//     if(err) {
-//       return res.status(499).send(err)
-//     }
-//     res.send(destination);
-//   })
-// });
+router.post('/', (req, res) => {
+  Reservation.create(req.body, (err, reservation) =>{
+    if(err) {
+      return res.status(499).send(err)
+    }
+    res.end(reservation);
+  })
+});
 
 // router.put('/', (req, res) => {
 //   Dest.findByIdAndUpdate(req.body._id, req.body, (err, destination) => {

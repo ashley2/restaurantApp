@@ -4,9 +4,12 @@ var app = angular.module('resApp');
 
 app.service('ResService', function($http){
 
-  this.getAll = function(){
-    return $http.get('/reservations')
-  };
+
+
+
+  // this.getAll = function(){
+  //   return $http.get('/reservations')
+  // };
 
   this.create = function(newReservation){
     return $http.post('/reservations', newReservation);
