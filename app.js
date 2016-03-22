@@ -5,6 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/reservations'
+require("mongoose").connect(mongoUrl, function(err){
+  if(err){
+    console.log(err);
+  } else {
+    console.log(`MongoDB connected! ${mongoUrl}`);
+  }
+});
 
 var app = express();
 

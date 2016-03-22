@@ -21,7 +21,7 @@ app.service('ResService', function($http){
 
  };
 
- this.update = function(editRes){
+ this.update = function(reserv){
     return $http.put('/reservations', editRes);
 };
 })

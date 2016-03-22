@@ -19,8 +19,6 @@ $scope.reservations = [];
   $scope.viewFull = null;
 
 
-
-
 $scope.viewRes = null;
 
   $scope.editRes = function(reserv){
@@ -32,8 +30,8 @@ $scope.viewRes = null;
     $scope.viewRes = null;
   }
 
-  $scope.update = function(viewRes){
-    ResService.update(viewRes)
+  $scope.update = function(reserv){
+    ResService.update(reserv)
     .then(function(){
       swal("Great!", "Your dest has been saved!", "success")
     }, function(err){
