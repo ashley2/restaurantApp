@@ -20,27 +20,27 @@ router.post('/', (req, res) => {
     if(err) {
       return res.status(499).send(err)
     }
-    res.end(reservation);
+    res.send(reservation);
   })
 });
 
-// router.put('/', (req, res) => {
-//   Reservation.findByIdAndUpdate(req.body._id, req.body, (err, reservation) => {
-//     if(err) {
-//       return res.status(499).send(err)
-//     }
-//     res.end();
-//   })
-// })
+router.put('/', (req, res) => {
+  Reservation.findByIdAndUpdate(req.body._id, req.body, (err, reservation) => {
+    if(err) {
+      return res.status(499).send(err)
+    }
+    res.end();
+  })
+})
 
-// router.delete('/:id', (req, res) => {
-//   Reservation.findByIdAndRemove(req.params.id, (err) => {
-//     if(err) {
-//       return res.status(499).send(err)
-//     }
-//     res.end();
-//   })
-// })
+router.delete('/:id', (req, res) => {
+  Reservation.findByIdAndRemove(req.params.id, (err) => {
+    if(err) {
+      return res.status(499).send(err)
+    }
+    res.end();
+  })
+})
 
 
 

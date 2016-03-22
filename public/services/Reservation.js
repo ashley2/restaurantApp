@@ -7,23 +7,23 @@ app.service('ResService', function($http){
 
 
 
-  // this.getAll = function(){
-  //   return $http.get('/reservations')
-  // };
+  this.getAll = function(){
+    return $http.get('/reservations')
+  };
 
   this.create = function(reserv){
     return $http.post('/reservations',reserv);
   }
 
-//   this.delete = function(reservation) {
-//    return $http.delete(`/reservations/${reservation._id}`)
+  this.delete = function(reserv) {
+   return $http.delete(`/reservations/${reserv._id}`)
 
 
-//  };
+ };
 
-//  this.update = function(editReservation){
-//     return $http.put('/reservations', editReservation);
-// };
+ this.update = function(editRes){
+    return $http.put('/reservations', editRes);
+};
 })
 
 

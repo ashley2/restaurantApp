@@ -7,7 +7,7 @@ var ReservSchema = mongoose.Schema({
   first: {type: String },
   time: {type: Number, required:true},
   date: {type: Date, required:true},
-  checkedIn: {type: Boolean, default:false},
+  checked: {type: Boolean, default:false},
   seats: {type: Number, required:true},
   notes: {type: String}
 });

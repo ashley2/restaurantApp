@@ -5,6 +5,7 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
   <link rel="stylesheet" href="style.css">
 
@@ -12,16 +13,22 @@
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
   <script src="module.js"></script>
-  <script src="/javascripts/resCtrl.js"></script>
+  <script src="/javascripts/histCtrl.js"></script>
+  <script src="/javascripts/homeCtrl.js"></script>
   <script src="services/Reservation.js"></script>
 </head>
 
+<body ng-app="resApp" ng-controller="homeCtrl">
 
-<body ng-app="resApp" ng-controller="resCtrl">
+  <ng-include src="'./templates/nav.html'"></ng-include>
+
+  <ui-view></ui-view>
 
 
+  
   <button data-target="modal1" class="waves-effect waves-light btn modal-trigger">Add Reservation</button>
 
   <div id="container">
@@ -36,60 +43,68 @@
       </thead>
       <tbody>
 
-        <tr ng-repeat="res in reservations track by $index">
-          <td id=checked>{{reserv.checked}}</td>
-          <td id=tableLast>{{reserv.last}}</td>
-          <td id=tableSeats>{{reserv.seats}}</td>
-          <td id=tableTime>{{reserv.time}</td>
-        </td>
-      </tr>
-    </tbody>
-  </table>  
-</div>
+        <tr ng-repeat="reserv in reservations track by $index">
+          <td><select ng-model="reserv.checked"class="browser-default">
+          <option value="No">No</option>
+            <option value="Yes">Yes</option>
+            {{reserv.checked}}</td>
+            <td id=tableLast>{{reserv.last}}</td>
+            <td id=tableSeats>{{reserv.seats}}</td>
+            <td id=tableTime>{{reserv.time}}</td>
+          </td>
+        </tr>
 
-
-
-<!-- Modal Structure -->
-<div id="modal1" class="modal bottom-sheet">
-  <div class="modal-content">
-
-    <form ng-submit="addReserv()">
-
-      <label>First Name:</label>
-      <input ng-model="reserv.first" type="text">
-      <label>Last Name:</label>
-      <input ng-model="reserv.last" type="text">
-
-      <input ng-model="reserv.date" type="date">
-      <label for="">Time:</label>
-      <input ng-model="reserv.time" type="number">
-
-
-      <label>Party Size</label>
-      <input ng-model="reserv.seats" type="number">
-
-      <label for="notes">Notes:</label>
-      <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
-
-      <input ng-model="reserv.checked" type="checkbox" id="checkedIn" />
-      <label for="test5">Checked In</label>
-
+      </tbody>
+    </table>  
 
   </div>
-  <div class="modal-footer">
 
 
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+
+      <form ng-submit="addReserv(reserv)">
+
+        <label>First Name:</label>
+        <input ng-model="reserv.first" type="text">
+        <label>Last Name:</label>
+        <input ng-model="reserv.last" type="text">
+
+        <input ng-model="reserv.date" type="date">
+        <label for="">Time:</label>
+        <input ng-model="reserv.time" type="number">
 
 
-    <button type="submit">Add Reservation</button>
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat modal-close">Cancel</a>
+        <label>Party Size</label>
+        <input ng-model="reserv.seats" type="number">
+
+        <label for="notes">Notes:</label>
+        <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
+
+        <!-- <label>Checked In</label>
+        <select ng-model="reserv.checked"class="browser-default">
+          <option value="1">No</option>
+          <option value="2">Yes</option>
+        </select> -->
 
 
-  </form>
+      </div>
+      <div class="modal-footer">
 
-</div>
-</div>
+
+        <button type="submit" class="modal-close">Add Reservation</button>
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat modal-close">Cancel</a>
+
+
+      </form>
+
+    </div>
+  </div>
+
+
+
 
 
 

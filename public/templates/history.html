@@ -1,0 +1,69 @@
+<div id="header">Reservation History</div>
+
+<!-- filter in this state -->
+<div id="container">
+  <div id="mainPage" ng-hide="viewRes">
+    <table class="table table-responsive table-bordered">
+      <thead>
+        <tr>
+          <th data-field="checkedIn">Check In</th>
+          <th data-field="last">Last Name</th>
+          <th data-field="first">First Name</th>
+          <th data-field="seats">Seats</th>
+          <th data-field="time">Time</th>
+          <th data-field="notes">Notes</th>
+          <th data-field="update">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr ng-repeat="reserv in reservations track by $index">
+          <td>{{reserv.checked}}</td>
+          <td id=tableLast>{{reserv.last}}</td>
+          <td id=tableLast>{{reserv.first}}</td>
+          <td id=tableSeats>{{reserv.seats}}</td>
+          <td id=tableTime>{{reserv.time}}</td>
+          <td id=tableTime>{{reserv.notes}}</td>
+          <td><a class="waves-effect waves-light btn-large" ng-click="editRes(reserv)">Edit</a><a class="waves-effect waves-light btn-large" ng-click="deleteRes(reserv)">Delete</a></td>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>  
+
+</div>
+</div>
+
+
+<!-- second view -->
+
+<div id="container2">
+  <div id="detailView" ng-if="viewRes">
+    <form action="" ng-submit="saveEdit(reserv)">
+     <button type="submit" class="modal-close">Add Reservation</button>
+     <label>First Name:</label>
+     <input ng-model="reserv.first" type="text">
+     <label>Last Name:</label>
+     <input ng-model="reserv.last" type="text">
+
+     <input ng-model="reserv.date" type="date">
+     <label for="">Time:</label>
+     <input ng-model="reserv.time" type="number">
+
+
+     <label>Party Size</label>
+     <input ng-model="reserv.seats" type="number">
+
+     <label for="notes">Notes:</label>
+     <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
+
+     <label for="">Checked In?</label>
+     <select ng-model="reserv.checked"class="browser-default">
+      <option value="No">No</option>
+      <option value="Yes">Yes</option>
+      <label for="test5">Checked In</label>
+
+
+    </form>
+  </div>
+</div>
