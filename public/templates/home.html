@@ -13,18 +13,18 @@
     </thead>
     <tbody>
 
-      <tr ng-repeat="reserv in reservations track by $index">
-        <td><input type="checkbox" id="test5" />
-        <label for="test5"></label>
-          {{reserv.checked}}</td>
-          <td id=tableLast>{{reserv.last}}</td>
-          <td id=tableSeats>{{reserv.seats}}</td>
-          <td id=tableTime>{{reserv.time}}</td>
-        </td>
-      </tr>
+     <td>
+       <input type="checkbox" ng-click="toggleChecked(reserv)" ng-model="reserv.checked" id="{{'test' +$index}}" />
+       <label for="{{'test' +$index}}"></label>
+     </td>
+     <td id=tableLast>{{reserv.last}}</td>
+     <td id=tableSeats>{{reserv.seats}}</td>
+     <td id=tableTime>{{reserv.time}}</td>
+   </td>
+ </tr>
 
-    </tbody>
-  </table>  
+</tbody>
+</table>  
 
 </div>
 
@@ -39,23 +39,21 @@
       <label>First Name:</label>
       <input ng-model="reserv.first" type="text">
       <label>Last Name:</label>
-      <input ng-model="reserv.last" type="text">
+      <input ng-model="reserv.last" type="text" required>
 
-      <input ng-model="reserv.date" type="date">
+      <input ng-model="reserv.date" type="date" required>
 
       <label for="">Time:</label>
-      <input ng-model="reserv.time" type="number" min="1" max="12">
+      <input ng-model="reserv.time" type="number" min="1" max="12" required>
 
 
       <label>Party Size</label>
-      <input ng-model="reserv.seats" type="number" min="1" max="15">
+      <input ng-model="reserv.seats" type="number" min="1" max="15" required>
 
       <label for="notes">Notes:</label>
       <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
 
-      <!--   <input ng-model="reserv.checked" type="checkbox" id="test5" />
-      <label for="test5">Checked In?</label> -->
-
+    
 
       </div>
       <div class="modal-footer">

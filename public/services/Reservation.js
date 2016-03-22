@@ -23,6 +23,12 @@ app.service('ResService', function($http){
  this.update = function(viewRes){
     return $http.put('/reservations', editRes);
 };
+
+ this.toggleCheckin = function(reservId) {
+    return $http.put(`/reservations/${reservationId}/checkin`);
+  };
+
+
 })
 
 // findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, reserv){

@@ -42,6 +42,15 @@ angular.module('resApp')
     })
   }
 
+  $scope.toggleChecked = (reserv) =>{
+   ResService.update(viewRes)
+   .then(function(){
+     swal("Great!", "Your reservation has been saved!", "success")
+   }, function(err){
+     console.log(err);
+   })
+ }
+
   $scope.deleteRes = function(reserv){
     console.log('delete')
     swal({   title: "Are you sure?",   

@@ -4,14 +4,6 @@
 
 <div id="container">
   <div id="mainPage" ng-hide="viewRes">
-<p><input type="text" ng-model="lastName"></p>
-
-<!-- <ul>
-  <li ng-repeat="x in last | filter:lastName">
-    {{ x }}
-  </li>
-</ul> -->
-
 
 
     <table class="table table-responsive table-bordered">
@@ -60,8 +52,8 @@
      <input ng-model="viewRes.last" value="" type="text">
 
      <input ng-model="viewRes.date" value="" type="date">
-     <label for="">Time:</label>
-     <input ng-model="viewRes.time" value="" type="number">
+     <label for="">Time:</label>yo
+     <input type="number"
 
 
      <label>Party Size</label>
@@ -70,11 +62,11 @@
      <label for="notes">Notes:</label>
      <textarea ng-model="viewRes.notes" cols="9" rows="3"></textarea>
 
+     <td>
+     <input type="checkbox" ng-click="toggleChecked(reserv)" ng-model="viewRes.checked" id="{{'test' +$index}}" />
+       <label for="{{'test' +$index}}"></label>
+     </td>
 
-     <input ng-model="viewRes.checked" type="checkbox" id="test5" />
-      <label for="test5">Checked in?</label>
-
-
-     </form>
-   </div>
+   </form>
  </div>
+</div>

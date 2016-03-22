@@ -9,6 +9,18 @@ angular.module('resApp')
 $scope.reservations = [];
 
   
+ // $scope.today = new Date().getDay()
+ // console.log($scope.today);
+
+
+//get upcoming to page
+// ResService.getUpcoming()
+//   .then(function(res){
+//     console.log('res', res);
+//   }, function(err){
+//     console.error('err', err)
+//   })
+
   ResService.getAll()
   .then(function(res){
 
@@ -20,8 +32,17 @@ $scope.reservations = [];
     console.error(err);
   });
 
+  $scope.toggleChecked = (reserv) =>{
+   ResService.update(viewRes)
+   .then(function(){
+     swal("Great!", "Your reservation has been saved!", "success")
+   }, function(err){
+     console.log(err);
+   })
+ }
 
-  $scope.addReserv = function(reserv){
+
+  $scope.addReserv = (reserv) => {
 
     ResService.create($scope.reserv)
     .then(function(res){
