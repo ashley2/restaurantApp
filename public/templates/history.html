@@ -1,8 +1,19 @@
 <div id="header">Reservation History</div>
 
 <!-- filter in this state -->
+
 <div id="container">
   <div id="mainPage" ng-hide="viewRes">
+<p><input type="text" ng-model="lastName"></p>
+
+<!-- <ul>
+  <li ng-repeat="x in last | filter:lastName">
+    {{ x }}
+  </li>
+</ul> -->
+
+
+
     <table class="table table-responsive table-bordered">
       <thead>
         <tr>
@@ -42,17 +53,17 @@
     <form action="" ng-submit="saveEdit(reserv)">
      <button type="submit" class="modal-close">Add Reservation</button>
      <label>First Name:</label>
-     <input ng-model="reserv.first" type="text">
+     <input ng-model="reserv.first" value="" type="text">
      <label>Last Name:</label>
-     <input ng-model="reserv.last" type="text">
+     <input ng-model="reserv.last" value="" type="text">
 
-     <input ng-model="reserv.date" type="date">
+     <input ng-model="reserv.date" value="" type="date">
      <label for="">Time:</label>
-     <input ng-model="reserv.time" type="number">
+     <input ng-model="reserv.time" value="" type="number">
 
 
      <label>Party Size</label>
-     <input ng-model="reserv.seats" type="number">
+     <input ng-model="reserv.seats" value="" type="number">
 
      <label for="notes">Notes:</label>
      <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
