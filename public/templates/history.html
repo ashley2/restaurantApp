@@ -48,34 +48,35 @@
 
 <!-- second view -->
 
+
 <div id="container2">
-  <div id="detailView" ng-if="viewRes">
-    <form action="" ng-submit="saveEdit(reserv)">
-     <button type="submit" class="modal-close">Submit Edit</button>
+ <div id="detailView" ng-if="viewRes">
+   <form ng-submit="saveEdit(viewRes)">
+     <button type="submit" class="modal-close">Add Reservation</button>
      <button class="modal-close">Cancel</button><br>
      <label>First Name:</label>
-     <input ng-model="reserv.first" value="i " type="text">
+     <input ng-model="viewRes.first" value="" type="text">
      <label>Last Name:</label>
-     <input ng-model="reserv.last" value="" type="text">
+     <input ng-model="viewRes.last" value="" type="text">
 
-     <input ng-model="reserv.date" value="" type="date">
+     <input ng-model="viewRes.date" value="" type="date">
      <label for="">Time:</label>
-     <input ng-model="reserv.time" value="" type="number">
+     <input ng-model="viewRes.time" value="" type="number">
 
 
      <label>Party Size</label>
-     <input ng-model="reserv.seats" value="" type="number">
+     <input ng-model="viewRes.seats" value="" type="number">
 
      <label for="notes">Notes:</label>
-     <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
+     <textarea ng-model="viewRes.notes" cols="9" rows="3"></textarea>
 
      <label for="">Checked In?</label>
-     <select ng-model="reserv.checked"class="browser-default">
-      <option value="No">No</option>
-      <option value="Yes">Yes</option>
-      <label for="test5">Checked In</label>
+     <select ng-model="viewRes.checked"class="browser-default">
+       <option value="No">No</option>
+       <option value="Yes">Yes</option>
+       <label for="test5">Checked In</label>
 
 
-    </form>
-  </div>
-</div>
+     </form>
+   </div>
+ </div>

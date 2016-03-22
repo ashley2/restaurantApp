@@ -30,8 +30,8 @@ $scope.viewRes = null;
     $scope.viewRes = null;
   }
 
-  $scope.update = function(reserv){
-    ResService.update(reserv)
+  $scope.update = function(viewRes){
+    ResService.update(viewRes)
     .then(function(){
       swal("Great!", "Your dest has been saved!", "success")
     }, function(err){
