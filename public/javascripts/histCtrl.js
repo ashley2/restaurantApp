@@ -42,14 +42,15 @@ angular.module('resApp')
     })
   }
 
-  $scope.toggleChecked = (viewRes) =>{
-   ResService.update(viewRes)
-   .then(function(){
+  $scope.toggleChecked= (reserv) =>{
+   ResService.update(reserv)
+   .then(function(){s
      swal("Great!", "Your reservation has been saved!", "success")
    }, function(err){
      console.log(err);
    })
  }
+
 
   $scope.deleteRes = function(reserv){
     console.log('delete')
