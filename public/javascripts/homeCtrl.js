@@ -13,7 +13,7 @@ $scope.reservations = [];
  // console.log($scope.today);
 
 
-//get upcoming to page
+// get upcoming to page
 // ResService.getUpcoming()
 //   .then(function(res){
 //     console.log('res', res);
@@ -33,7 +33,7 @@ $scope.reservations = [];
   });
 
   $scope.toggleChecked = (reserv) =>{
-   ResService.update(viewRes)
+   ResService.update(reserv)
    .then(function(){
      swal("Great!", "Your reservation has been saved!", "success")
    }, function(err){

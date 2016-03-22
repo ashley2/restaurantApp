@@ -20,13 +20,14 @@ app.service('ResService', function($http){
 
  };
 
- this.update = function(viewRes){
+ this.update = function(editRes){
     return $http.put('/reservations', editRes);
 };
 
- this.toggleCheckin = function(reservId) {
-    return $http.put(`/reservations/${reservationId}/checkin`);
-  };
+
+ // this.toggleCheckin = function(reservId) {
+ //    return $http.put(`/reservations/${reservationId}/checkin`);
+ //  };
 
 
 })
