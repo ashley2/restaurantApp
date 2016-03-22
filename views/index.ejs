@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>La Bella Vita</title>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="module.js"></script>
+  <script src="/javascripts/resCtrl.js"></script>
+  <script src="services/Reservation.js"></script>
+</head>
+
+
+<body ng-app="resApp" ng-controller="resCtrl">
+
+<button data-target="modal1" class="btn modal-trigger waves-effect waves-light btn modal-trigger" ng-click="addReserv()">Add Reservation</button>
+
+  <div id="container">
+    <table class="table table-responsive table-bordered">
+      <thead>
+        <tr>
+          <th data-field="checkedIn">Check In</th>
+          <th data-field="last">Last Name</th>
+          <th data-field="seats">Seats</th>
+          <th data-field="time">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr ng-repeat="res in reservations track by $index">
+          <td id=checked>{{reserv.checked}}</td>
+          <td id=tableName>{{reserve.last}}</td>
+          <td id=tableName>{{reserve.seats}}</td>
+          <td id=tablePrice>{{reserve.time | date : MM/dd/yyyy}}</td>
+        </td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+
+
+<!-- Modal Trigger -->
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+
+<input type="text">
+<input type="text">
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat modal-close">Agree</a>
+
+  </div>
+</div>
+
+
+
+</body>
+</html>
