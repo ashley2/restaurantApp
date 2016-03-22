@@ -1,7 +1,7 @@
 angular.module('resApp')
 .controller('histCtrl', function($scope, ResService, $stateParams){
 
-$scope.reservations = [];
+  $scope.reservations = [];
 
   
   ResService.getAll()
@@ -19,21 +19,24 @@ $scope.reservations = [];
   $scope.viewFull = null;
 
 
-$scope.viewRes = null;
+  $scope.viewRes = null;
 
   $scope.editRes = function(reserv){
     console.log(reserv);
     $scope.viewRes = reserv;
+    $scope.viewRes.date = new Date($scope.viewRes.date)
   }
 
   $scope.saveEdit = function(){
     $scope.viewRes = null;
   }
 
+
+  
   $scope.update = function(viewRes){
     ResService.update(viewRes)
-    .then(function(){
-      swal("Great!", "Your dest has been saved!", "success")
+    .then(function(){s
+      swal("Great!", "Your reservation has been saved!", "success")
     }, function(err){
       console.log(err);
     })

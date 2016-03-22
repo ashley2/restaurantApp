@@ -52,7 +52,7 @@
 <div id="container2">
  <div id="detailView" ng-if="viewRes">
    <form ng-submit="saveEdit(viewRes)">
-     <button type="submit" class="modal-close">Add Reservation</button>
+     <button type="submit" class="modal-close">Submit Edit</button>
      <button class="modal-close">Cancel</button><br>
      <label>First Name:</label>
      <input ng-model="viewRes.first" value="" type="text">
@@ -70,11 +70,9 @@
      <label for="notes">Notes:</label>
      <textarea ng-model="viewRes.notes" cols="9" rows="3"></textarea>
 
-     <label for="">Checked In?</label>
-     <select ng-model="viewRes.checked"class="browser-default">
-       <option value="No">No</option>
-       <option value="Yes">Yes</option>
-       <label for="test5">Checked In</label>
+
+     <input ng-model="viewRes.checked" type="checkbox" id="test5" />
+      <label for="test5">Checked in?</label>
 
 
      </form>

@@ -14,9 +14,8 @@
     <tbody>
 
       <tr ng-repeat="reserv in reservations track by $index">
-        <td><select ng-model="reserv.checked"class="browser-default">
-          <option value="No">No</option>
-          <option value="Yes">Yes</option>
+        <td><input type="checkbox" id="test5" />
+        <label for="test5"></label>
           {{reserv.checked}}</td>
           <td id=tableLast>{{reserv.last}}</td>
           <td id=tableSeats>{{reserv.seats}}</td>
@@ -54,11 +53,8 @@
       <label for="notes">Notes:</label>
       <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
 
-        <!-- <label>Checked In</label>
-        <select ng-model="reserv.checked"class="browser-default">
-          <option value="1">No</option>
-          <option value="2">Yes</option>
-        </select> -->
+      <!--   <input ng-model="reserv.checked" type="checkbox" id="test5" />
+      <label for="test5">Checked In?</label> -->
 
 
       </div>
