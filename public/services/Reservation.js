@@ -11,8 +11,8 @@ app.service('ResService', function($http){
   //   return $http.get('/reservations')
   // };
 
-  this.create = function(newReservation){
-    return $http.post('/reservations', newReservation);
+  this.create = function(reserv){
+    return $http.post('/reservations',reserv);
   }
 
 //   this.delete = function(reservation) {

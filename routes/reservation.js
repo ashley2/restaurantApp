@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 });
 
 // router.put('/', (req, res) => {
-//   Dest.findByIdAndUpdate(req.body._id, req.body, (err, destination) => {
+//   Reservation.findByIdAndUpdate(req.body._id, req.body, (err, reservation) => {
 //     if(err) {
 //       return res.status(499).send(err)
 //     }
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
 // })
 
 // router.delete('/:id', (req, res) => {
-//   Dest.findByIdAndRemove(req.params.id, (err) => {
+//   Reservation.findByIdAndRemove(req.params.id, (err) => {
 //     if(err) {
 //       return res.status(499).send(err)
 //     }

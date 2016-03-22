@@ -53,46 +53,48 @@
 <div id="modal1" class="modal bottom-sheet">
   <div class="modal-content">
 
-  <form>
-    
-    <label>First Name:</label>
-    <input ng-model="reserv.first" type="text">
-    <label>Last Name:</label>
-    <input ng-model="reserv.last" type="text">
+    <form ng-submit="addReserv()">
 
-<input ng-model="reserv.date" type="date">
-<label for="">Time:</label>
-<input ng-model="reserv.time" type="number">
+      <label>First Name:</label>
+      <input ng-model="reserv.first" type="text">
+      <label>Last Name:</label>
+      <input ng-model="reserv.last" type="text">
+
+      <input ng-model="reserv.date" type="date">
+      <label for="">Time:</label>
+      <input ng-model="reserv.time" type="number">
 
 
-  <label>Party Size</label>
-  <input ng-model="reserv.seats" type="number">
+      <label>Party Size</label>
+      <input ng-model="reserv.seats" type="number">
 
-  <label for="notes">Notes:</label>
-  <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
+      <label for="notes">Notes:</label>
+      <textarea ng-model="reserv.notes" cols="9" rows="3"></textarea>
 
-   <input ng-model="reserv.checked" type="checkbox" id="checkedIn" />
+      <input ng-model="reserv.checked" type="checkbox" id="checkedIn" />
       <label for="test5">Checked In</label>
-  </ul>
+
+
+  </div>
+  <div class="modal-footer">
 
 
 
+
+
+    <button type="submit">Add Reservation</button>
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat modal-close">Cancel</a>
+
+
+  </form>
 
 </div>
-<div class="modal-footer">
-  <button type="submit" ng-submit="addReserv()">Add Reservation</button>
-  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat modal-close">Cancel</a>
-
-
-</form>
-
-</div>
 </div>
 
 
 
 
-  
+
 
 </body>
 </html>

@@ -22,11 +22,12 @@ app.controller('resCtrl', function($scope, ResService){
 
 
   $scope.addReserv = function(){
-    console.log('click')
-    ResService.create($scope.newReservation)
+
+    ResService.create($scope.reserv)
     .then(function(res){
       $scope.reservations.push(res.data)
-      $scope.newReservation = {}
+      $scope.reserv = {}
+
     }, function(err){
       console.log(err)
     }); 
