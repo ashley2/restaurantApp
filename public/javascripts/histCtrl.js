@@ -16,8 +16,6 @@ angular.module('resApp')
   });
 
 
-  $scope.viewFull = null;
-
 
   $scope.viewRes = null;
 
@@ -42,14 +40,14 @@ angular.module('resApp')
     })
   }
 
-  $scope.toggleChecked= (reserv) =>{
-   ResService.update(reserv)
-   .then(function(){s
-     swal("Great!", "Your reservation has been saved!", "success")
-   }, function(err){
-     console.log(err);
-   })
- }
+ //  $scope.toggleChecked= (reserv) =>{
+ //   ResService.update(reserv)
+ //   .then(function(){s
+ //     swal("Great!", "Your reservation has been saved!", "success")
+ //   }, function(err){
+ //     console.log(err);
+ //   })
+ // }
 
 
   $scope.deleteRes = function(reserv){

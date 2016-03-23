@@ -15,38 +15,7 @@ router.get('/', (req, res) => {
   })
 })
 
-//all apointments between an hour ago and end of day not checked in
 
-// router.get('upcoming', function(req, res){
-//   var anHourAgo = moment().subtract(1, 'hour'.toDate();
-//     var endOfToday = moment().endOf('day').toDate();
-
-//     Reservation.find({
-//       time: {
-//         '$gte': anHourAgo,
-//         '$lte': endOfToday
-//       },
-//       checkedIn:false
-//     }, function(err, appointments){
-//       if(err) return res.status(499).send(err);
-//       res.send(reservations);
-//     })
-
-//   })
-
-
-
-// get today
-
-// router.get('/today', function(req, res, next){
-//   var startOfToday = moment().startOf('day').toDate();
-//   var endOfToday = moment().endOf('day').toDate();
-
-//   Reservation.find({time: {'$gte': startOfToday, '$lte' : endOfToday}}, function(err, appointments){
-//     if(err) return res.status(499).send(err);
-//     res.send(reservations);
-//   })
-// })
 
 router.post('/', (req, res) => {
   Reservation.create(req.body, (err, reservation) =>{
